@@ -118,6 +118,7 @@ module Aws
 
         resp = @client.get_credentials_for_identity(
           identity_id: identity_id,
+          logins: @logins,
           custom_role_arn: @custom_role_arn
         )
 

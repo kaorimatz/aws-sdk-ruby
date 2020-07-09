@@ -89,11 +89,11 @@ module Aws
       describe '#refresh' do
         it 'extracts credentials and expiration from the response' do
           expect(client).to receive(:get_credentials_for_identity)
-            .with(identity_id: identity_id, custom_role_arn: nil)
+            .with(identity_id: identity_id, logins: { 'provider' => 'token' }, custom_role_arn: nil)
             .and_return(resp)
 
           creds = CognitoIdentityCredentials.new(
-            client: client, identity_id: identity_id
+            client: client, identity_id: identity_id, logins: { 'provider' => 'token' },
           )
 
           expect(creds.credentials.access_key_id)

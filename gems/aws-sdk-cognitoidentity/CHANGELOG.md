@@ -1,6 +1,8 @@
 Unreleased Changes
 ------------------
 
+* Issue - Specify logins when getting credentials in `Aws::CognitoIdentity::CognitoIdentityCredentials`.
+
 1.24.0 (2020-06-23)
 ------------------
 
